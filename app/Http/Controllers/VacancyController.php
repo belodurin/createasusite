@@ -90,16 +90,18 @@ class VacancyController extends Controller
      */
     public function apply(Vacancy $vacancy, Request $request)
     {
-        // Проверяем, авторизован ли пользователь
         if (!Auth::check()) {
             return redirect()->route('login')->with('warning', 'Для отклика на вакансию необходимо зарегистрироваться.');
         }
 
-        // Создаем запись об отклике
+        $request->validate([
+            'message' => 'required|string|max:500',
+        ]);
+
         Application::create([
-            'user_id' => Auth::id(), // ID авторизованного пользователя
-            'vacancy_id' => $vacancy->id, // ID вакансии
-            'message' => $request->input('message', ''), // Сообщение (если есть)
+            'user_id' => Auth::id(),
+            'vacancy_id' => $vacancy->id,
+            'message' => $request->input('message'),
         ]);
 
         return redirect()->back()->with('success', 'Ваш отклик успешно отправлен!');

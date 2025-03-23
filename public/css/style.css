@@ -559,6 +559,73 @@
     background: #001558;
 }
 
+.vacancies-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+    gap: 20px; /* Расстояние между элементами */
+}
+
+.vacancy-item {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vacancy-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.vacancy-title {
+    font-size: 1.75rem;
+    color: #0f44b4;
+    margin-bottom: 10px;
+}
+
+.vacancy-description {
+    font-size: 1rem;
+    color: #4a4a4a;
+    margin-bottom: 15px;
+}
+
+.vacancy-details {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.vacancy-details li {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.vacancy-details li strong {
+    color: #0f44b4;
+}
+
+.vacancy-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #0f44b4, #001558);
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.vacancy-button:hover {
+    background: linear-gradient(to right, #001558, #0f44b4);
+}
+
+.vacancy-button:disabled {
+    background: #808080;
+    cursor: not-allowed;
+}
 .contact-container {
     position: relative;
     z-index: 2;

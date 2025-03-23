@@ -29,7 +29,7 @@ class ContactRequestController extends Controller
      */
     public function store(Request $request, Solution $solution)
     {
-        // Валидация данных
+
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255',
@@ -37,17 +37,21 @@ class ContactRequestController extends Controller
         ]);
 
         try {
-            // Создание записи в таблице contact_requests
-            $solution->contactRequests()->create($validatedData);
 
-            // Перенаправление с сообщением об успехе
+            $contactRequest = $solution->contactRequests()->create($validatedData);
+
+
+            Log::info('Запрос успешно создан: ' . $contactRequest->id);
+
             return redirect()->route('shop')->with('success', 'Ваш запрос успешно отправлен.');
         } catch (\Exception $e) {
-            // Логирование ошибки
+
             Log::error('Ошибка при создании запроса: ' . $e->getMessage());
 
-            // Перенаправление с сообщением об ошибке
-            return redirect()->back()->with('error', 'Произошла ошибка при отправке запроса. Пожалуйста, попробуйте снова.');
+
+            return redirect()->back()
+                ->withInput()
+                ->with('error', 'Произошла ошибка при отправке запроса. Пожалуйста, попробуйте снова.');
         }
     }
 }

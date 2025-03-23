@@ -1,6 +1,5 @@
 <?php
 
-// app/Http/Controllers/SolutionController.php
 namespace App\Http\Controllers;
 
 use App\Models\Solution;

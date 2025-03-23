@@ -7,7 +7,6 @@
     <div class="auth-form">
         <h1 class="auth-title">Регистрация</h1>
 
-        <!-- Вывод ошибок валидации -->
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>

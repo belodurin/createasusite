@@ -16,7 +16,7 @@ class ContactRequest extends Model
         'solution_id',
     ];
 
-    // Отношение "многие к одному" с моделью Solution
+
     public function solution()
     {
         return $this->belongsTo(Solution::class);
