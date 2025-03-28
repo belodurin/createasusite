@@ -398,6 +398,12 @@
     gap: 30px;
 }
 
+@media (min-width: 1024px) {
+    .news-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 .news-item {
     background: white;
     border: 1px solid #e0e0e0;
@@ -561,8 +567,8 @@
 
 .vacancies-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 колонки */
-    gap: 20px; /* Расстояние между элементами */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
 .vacancy-item {
@@ -707,3 +713,4 @@ textarea.form-input {
     transform: scale(1.02);
     box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
 }
+
