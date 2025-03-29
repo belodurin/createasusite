@@ -344,12 +344,12 @@
     text-align: center;
     font-size: 2.0rem;
     color: #000000;
-    margin-bottom: 50px;
+    margin: 0 auto 50px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-}
 
+}
 .news-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

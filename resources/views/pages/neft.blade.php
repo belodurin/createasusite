@@ -22,13 +22,13 @@
         <h2 class="oil-section-title">Решения для нефтеперерабатывающих заводов</h2>
         <div class="oil-solution-cards">
             <div class="oil-solution-card">
-                <div class="oil-card-icon">🛢️</div>
+                <div class="oil-card-icon">🧩</div>
                 <h3>Геораспределённые системы</h3>
                 <p>Контроль и логгирование параметров работы транспортной системы на удалённых площадках</p>
             </div>
             <div class="oil-solution-card">
                 <div class="oil-card-icon">📊</div>
-                <h3>ExeMES система</h3>
+                <h3>MES система</h3>
                 <p>Визуализация производственных процессов в режиме реального времени, анализ уязвимых мест</p>
             </div>
         </div>
@@ -339,6 +339,7 @@ document.addEventListener('DOMContentLoaded', function() {
     padding: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
+    background-color: rgba(0, 60, 255, 0.05)
 }
 
 

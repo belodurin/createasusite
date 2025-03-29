@@ -76,30 +76,34 @@
                 <img src="{{ asset('images/automation.jpg') }}" alt="Automation Image">
                 <div class="production-overlay">
                     <h3>Автоматизированные системы энергетики</h3>
-                    <button class="details-button">Подробнее</button>
+                    <button class="details-button" onclick="window.location.href='{{ route('energy') }}'">Подробнее</button>
                 </div>
             </div>
+
             <div class="production-item">
                 <img src="{{ asset('images/auto1.jpg') }}" alt="Auto1 Image">
                 <div class="production-overlay">
                     <h3>Распределенная автоматизация</h3>
-                    <button class="details-button">Подробнее</button>
+                    <button class="details-button" onclick="window.location.href='{{ route('distributed') }}'">Подробнее</button>
                 </div>
             </div>
+
             <div class="production-item">
                 <img src="{{ asset('images/auto2.jpg') }}" alt="Auto2 Image">
                 <div class="production-overlay">
                     <h3>Роботизированные линии</h3>
-                    <button class="details-button">Подробнее</button>
+                    <button class="details-button" onclick="window.location.href='{{ route('robotic') }}'">Подробнее</button>
                 </div>
             </div>
+
             <div class="production-item">
                 <img src="{{ asset('images/auto3.jpg') }}" alt="Auto3 Image">
                 <div class="production-overlay">
                     <h3>Интеллектуальные системы</h3>
-                    <button class="details-button">Подробнее</button>
+                    <button class="details-button" onclick="window.location.href='{{ route('intelligent') }}'">Подробнее</button>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 </div>

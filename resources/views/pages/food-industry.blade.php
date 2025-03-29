@@ -115,7 +115,7 @@
     </div>
 
     <div class="food-solutions-section" id="food-solutions">
-        <h2 class="food-section-title">Наши решения</h2>
+        <h2 class="food-section-title">Предлагаемые решения</h2>
         <div class="food-solutions-list">
             <div class="food-solution-item">
                 <div class="food-solution-number">1</div>
@@ -472,7 +472,7 @@ document.addEventListener('DOMContentLoaded', function() {
     padding: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
-    background-color: #f8f4e9;
+    background-color: rgba(0, 60, 255, 0.05)
 }
 
 #food-hero {

@@ -7,6 +7,8 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SolutionController;
 use App\Http\Controllers\VacancyController;
 use App\Http\Controllers\ContactRequestController;
+use App\Http\Controllers\AutomationController;
+use App\Http\Controllers\NewsController;
 
 
 Route::get('/', function () {
@@ -22,9 +24,6 @@ Route::get('/food-industry', function () {
     return view('pages.food-industry', ['title' => 'Автоматизация пищевой промышленности']);
 })->name('food-industry');
 
-Route::get('/news', function () {
-    return view('pages.news', ['title' => 'Новости в сфере автоматизации']);
-})->name('news');
 
 
 Route::get('/shop', [SolutionController::class, 'index'])->name('shop');
@@ -55,3 +54,24 @@ Route::middleware('auth')->group(function () {
     Route::get('/order/{solution}', [OrderController::class, 'showOrderForm'])->name('order.form');
     Route::post('/order/{solution}', [OrderController::class, 'submitOrder'])->name('order.submit');
 });
+
+
+Route::get('/energy-systems', [AutomationController::class, 'energySystems'])->name('energy');
+Route::get('/distributed-automation', [AutomationController::class, 'distributedAutomation'])->name('distributed');
+Route::get('/robotic-lines', [AutomationController::class, 'roboticLines'])->name('robotic');
+Route::get('/intelligent-systems', [AutomationController::class, 'intelligentSystems'])->name('intelligent');
+
+
+
+
+
+
+Route::get('/news', [NewsController::class, 'index'])->name('news.index');
+Route::get('/news/ai-robots', [NewsController::class, 'aiRobots'])->name('news.ai-robots');
+Route::get('/news/rosatom-network', [NewsController::class, 'rosatomNetwork'])->name('news.rosatom-network');
+Route::get('/news/genesys-pc', [NewsController::class, 'genesysPc'])->name('news.genesys-pc');
+Route::get('/news/agriculture', [NewsController::class, 'agriculture'])->name('news.agriculture');
+Route::get('/news/delivery-robots', [NewsController::class, 'deliveryRobots'])->name('news.delivery-robots');
+Route::get('/news/ai-medicine', [NewsController::class, 'aiMedicine'])->name('news.ai-medicine');
+Route::get('/news/warehouse-automation', [NewsController::class, 'warehouseAutomation'])->name('news.warehouse-automation');
+Route::get('/news/self-driving-cars', [NewsController::class, 'selfDrivingCars'])->name('news.self-driving-cars');
