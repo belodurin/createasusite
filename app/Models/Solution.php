@@ -22,7 +22,10 @@ class Solution extends Model
         'price',
         'image',
     ];
-
+    public function getImageUrlAttribute(): string
+    {
+        return $this->image ? asset('storage/' . $this->image) : asset('images/default.jpg');
+    }
     /**
      * Отношение "один ко многим" с моделью ContactRequest.
      *
@@ -58,10 +61,7 @@ class Solution extends Model
      *
      * @return string
      */
-    public function getImageUrlAttribute(): string
-    {
-        return asset($this->image ?? 'images/default.jpg');
-    }
+
 
     /**
      * Получить краткое описание.

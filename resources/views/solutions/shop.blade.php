@@ -9,14 +9,14 @@
         @foreach ($solutions as $solution)
             <div class="catalog-item">
                 <div class="catalog-item-image">
-                    <img src="{{ asset($solution->image ?? 'images/default.jpg') }}" alt="{{ $solution->name }}">
+                    <img src="{{ $solution->image_url }}" alt="{{ $solution->name }}">
                 </div>
                 <div class="catalog-item-content">
                     <h2 class="catalog-item-title">{{ $solution->name }}</h2>
                     <p class="catalog-item-description">
                         {{ $solution->description }}
                     </p>
-                    <p><strong>Цена:</strong> {{ number_format($solution->price, 0, ',', ' ') }} руб.</p>
+                    <p><strong>Цена:</strong> {{ $solution->formatted_price }}</p>
                     <a href="{{ route('contact_requests.create', $solution) }}" class="catalog-item-button">Связаться</a>
                 </div>
             </div>

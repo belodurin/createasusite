@@ -506,5 +506,12 @@ document.addEventListener('DOMContentLoaded', function() {
         margin-bottom: 15px;
     }
 }
+.food-animated-text{
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 5px;
+    margin: 0 auto;
+}
 </style>
 @endsection

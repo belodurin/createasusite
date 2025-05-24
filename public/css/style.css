@@ -1,3 +1,4 @@
+/* === Контейнер формы === */
 .auth-container {
     position: relative;
     z-index: 2;
@@ -11,14 +12,16 @@
     padding: 20px;
 }
 
+/* === Сама форма === */
 .auth-form {
     background: white;
-    padding: 32px;
+    padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     border: 1px solid black;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .auth-form:hover {
@@ -46,11 +49,13 @@
 
 .form-input {
     width: 100%;
-    padding: 12px;
+    max-width: 100%;
+    padding: 10px 12px;
     border: 1px solid #d1d1d1;
     border-radius: 8px;
     font-size: 1rem;
     transition: border-color 0.3s ease;
+    box-sizing: border-box;
 }
 
 .form-input:focus {
@@ -58,8 +63,10 @@
     outline: none;
 }
 
+/* === Кнопка формы === */
 .form-button {
     width: 100%;
+    max-width: 300px; /* Ограничиваем ширину кнопки */
     padding: 12px;
     background: linear-gradient(to right, #0f44b4, #001558);
     color: white;
@@ -68,6 +75,8 @@
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
+    display: block;
+    margin: 20px auto 0 auto;
 }
 
 .form-button:hover {
@@ -139,10 +148,39 @@
         transform: scale(1);
     }
 }
+@media (max-width: 992px) {
+    .nav-menu {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: #131f63;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px 0;
+        transition: max-height 0.3s ease-out;
+        max-height: 0;
+        overflow: hidden;
+    }
 
+    .nav-menu.active {
+        max-height: 600px;
+    }
+
+    .nav-menu a,
+    .logout-button {
+        padding: 12px 20px;
+        display: block;
+        text-align: left;
+    }
+
+    .burger {
+        display: block;
+    }
+}
 .nav-menu {
     display: flex;
-    width: 100%;
+    width: 250%;
     justify-content: space-between;
     gap: 10px;
 }
@@ -670,5 +708,89 @@ textarea.form-input {
 .form-button:hover {
     transform: scale(1.02);
     box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+}
+
+/* === Основные стили хедера === */
+.header {
+    background-color: #131f63;
+    color: white;
+    padding: 1px 0;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.image-logo {
+    max-height: 60px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1px;
+    flex-wrap: nowrap;
+}
+
+.nav-menu div {
+    text-align: center;
+}
+
+.nav-menu a,
+.logout-button {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 12px;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover,
+.logout-button:hover {
+    color: #7da0ff;
+}
+
+.burger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* === Мобильные устройства (до 992px) === */
+@media (max-width: 992px) {
+    .nav-menu {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: #131f63;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px 0;
+        transition: max-height 0.3s ease-out;
+        max-height: 0;
+        overflow: hidden;
+        z-index: 1200;
+    }
+
+    .nav-menu.active {
+        max-height: 300px; /* Высота развернутого меню */
+    }
+
+    .nav-menu a,
+    .logout-button {
+        text-align: left;
+        padding: 12px 20px;
+    }
+
+    .burger {
+        display: block;
+    }
 }
 

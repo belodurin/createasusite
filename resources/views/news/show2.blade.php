@@ -9,7 +9,7 @@
 
         <div class="news-meta">
             <span class="news-date">29 марта 2025</span>
-            <span class="news-author">Автор: Антон Белодурин</span>
+            <span class="news-author">Автор: Антон Б.</span>
             <span class="news-category">Категория: Робототехника</span>
         </div>
 

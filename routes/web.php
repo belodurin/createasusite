@@ -75,3 +75,35 @@ Route::get('/news/delivery-robots', [NewsController::class, 'deliveryRobots'])->
 Route::get('/news/ai-medicine', [NewsController::class, 'aiMedicine'])->name('news.ai-medicine');
 Route::get('/news/warehouse-automation', [NewsController::class, 'warehouseAutomation'])->name('news.warehouse-automation');
 Route::get('/news/self-driving-cars', [NewsController::class, 'selfDrivingCars'])->name('news.self-driving-cars');
+
+Route::middleware(['auth'])->prefix('admin')->group(function () {
+    // Главная страница (GET)
+    Route::get('/vacancies', [\App\Http\Controllers\Admin\VacancyController::class, 'index'])
+         ->name('admin.vacancies.index');
+
+    // API-маршруты
+    Route::post('/vacancies', [\App\Http\Controllers\Admin\VacancyController::class, 'store'])
+         ->name('admin.vacancies.store');  // Добавлен POST-маршрут
+
+    Route::get('/vacancies/{vacancy}', [\App\Http\Controllers\Admin\VacancyController::class, 'show'])
+         ->name('admin.vacancies.show');
+
+    Route::put('/vacancies/{vacancy}', [\App\Http\Controllers\Admin\VacancyController::class, 'update'])
+         ->name('admin.vacancies.update');
+
+    Route::delete('/vacancies/{vacancy}', [\App\Http\Controllers\Admin\VacancyController::class, 'destroy'])
+         ->name('admin.vacancies.destroy');
+});
+
+Route::middleware(['auth'])->prefix('admin')->group(function () {
+    Route::get('/solutions', [\App\Http\Controllers\Admin\SolutionController::class, 'index'])
+         ->name('admin.solutions.index');
+    Route::post('/solutions', [\App\Http\Controllers\Admin\SolutionController::class, 'store'])
+         ->name('admin.solutions.store');
+    Route::get('/solutions/{id}', [\App\Http\Controllers\Admin\SolutionController::class, 'show'])
+         ->name('admin.solutions.show');
+    Route::put('/solutions/{id}', [\App\Http\Controllers\Admin\SolutionController::class, 'update'])
+         ->name('admin.solutions.update');
+    Route::delete('/solutions/{id}', [\App\Http\Controllers\Admin\SolutionController::class, 'destroy'])
+         ->name('admin.solutions.destroy');
+});
