@@ -120,7 +120,7 @@
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -180,9 +180,10 @@
 }
 .nav-menu {
     display: flex;
-    width: 250%;
+    width: 100%;
     justify-content: space-between;
     gap: 10px;
+    text-align: center;
 }
 
 .nav-menu div {

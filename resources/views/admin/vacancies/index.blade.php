@@ -3,7 +3,7 @@
 @section('title', 'Админ панель - Вакансии')
 
 @section('content')
-<div class="container">
+<div class="admin-container">
     <h1>Управление вакансиями</h1>
 
     <!-- Форма для создания/редактирования -->
@@ -48,7 +48,7 @@
     </div>
 
     <!-- Таблица вакансий -->
-    <div class="card">
+    <div class=admin-card>
         <div class="card-header">
             <h2>Список вакансий</h2>
         </div>
@@ -267,6 +267,12 @@
         font-size: 24px;
         font-weight: 600;
     }
+    h1 {
+        color: #2c3e50;
+        margin-bottom: 25px;
+        font-size: 24px;
+        font-weight: 600;
+    }
 
     /* Карточки форм и таблиц */
     .admin-card {
@@ -391,28 +397,28 @@
     }
 
     /* Таблицы */
-    .admin-table {
-        width: 100%;
+    .table {
+         width: 100%;
         margin-bottom: 1rem;
         color: #212529;
         border-collapse: collapse;
     }
 
-    .admin-table th,
-    .admin-table td {
+    .table th,
+    .table td {
         padding: 12px;
         vertical-align: middle;
         border-top: 1px solid #dee2e6;
     }
 
-    .admin-table thead th {
+    .table thead th {
         vertical-align: bottom;
         border-bottom: 2px solid #dee2e6;
         background-color: #f8f9fa;
         font-weight: 600;
     }
 
-    .admin-table tbody tr:hover {
+    .table tbody tr:hover {
         background-color: rgba(0,0,0,.02);
     }
 
